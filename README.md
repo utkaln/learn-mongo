@@ -23,13 +23,21 @@ db.myFirstDB.insertOne({_id: 1, value:'hello world !'})
 // read data that was saved to collection
 db.myFirstDB.find()
 
-
-
 ```
 
+## Advantages of Mongo DB
+* Fully managed
+* Reliable
+* Performance
+* Global
+* Productivity
+* Secure
+* Easy to migrate between different cloud providers, or move to in prem
+* Primary and secondary nodes can be between different providers too
+* Optimize performance by creating or dropping recommended indexes. Also recommends improve schemas
 
-## Informal Conversation about Mongo Atlas
-Mapping between RDBMS and Mongo
+
+### Mapping between RDBMS and Mongo
 * Database --> Database
 * Table --> Collection
 * Parent-Child Table --> Nested sub document
@@ -43,17 +51,6 @@ Mapping between RDBMS and Mongo
 #### $jsonSchema Operator
 * This operator matches document that satisfy the JSON schema
 
-### Advantages of Mongo DB
-* Fully managed
-* Reliable
-* Performance
-* Global
-* Productivity
-* Secure
-* Easy to migrate between different cloud providers, or move to in prem
-* Primary and secondary nodes can be between different providers too
-* Optimize performance by creating or dropping recommended indexes. Also recommends improve schemas
-* 
 
 #### Sharding
 * provides efficiency over hardware limitation by distributing data
@@ -125,3 +122,14 @@ db.orders.aggregate(
 * **Bucket Pattern** - Rapid transactions instead of being individual document, can be merged to one doc while writing to better index
 * **Computed Pattern** - Good for more reads. Reduce reads by capturing calculated data. Example: while writing just calculate and keep it. Compute on write is less work than compute on read. 
 * **Caching Pattern** - Good for read heavy
+
+### Patterns for many to many
+* use $unwind to make multiple objects to individual document, then group or aggregate how you want
+
+### Using Mongo Compass
+
+#### Filters
+```mongo
+
+```
+
